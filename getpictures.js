@@ -52,6 +52,26 @@ $(document).ready(function() {
       } 
       event.preventDefault();
    });
+   
+   $("#apodSubmit").click(function() {
+      var date = $("#apodDate").val();
+      var api = "7Wtor3PYKXZpLBDO4Vc1mMLZei5yNM7A7BwC6bD3";
+      var url = "https://api.nasa.gov/planetary/apod?";
+      url += "date="+date;
+      url += "&api_key=" + api;
+      console.log(url);
+      $.ajax({
+         url: url,
+         dataType: "json",
+         success: function(data) {
+             var imgUrl = data.url;
+             $("#apodDiv img").attr("src", imgUrl);
+             $("#apodDiv h1").text(data.title);
+             $("#apodDiv p").text(data.explanation);
+         }
+      });
+      
+   });
 });
 
 
