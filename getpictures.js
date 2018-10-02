@@ -51,30 +51,42 @@ $(document).ready(function() {
           $("#submit").click();
       } 
       event.preventDefault();
-   });
+   })
+   .focus();
    
    $("#apodSubmit").click(function() {
       var date = $("#apodDate").val();
-      var api = "7Wtor3PYKXZpLBDO4Vc1mMLZei5yNM7A7BwC6bD3";
-      var url = "https://api.nasa.gov/planetary/apod?";
-      url += "date="+date;
-      url += "&api_key=" + api;
-      console.log(url);
-      $.ajax({
-         url: url,
-         dataType: "json",
-         success: function(data) {
-             var imgUrl = data.url;
-             $("#apodDiv img").attr("src", imgUrl);
-             $("#apodDiv h1").text(data.title);
-             $("#apodDiv p").text(data.explanation);
-         }
-      });
+      if(validDate(date)) {
+          var api = "7Wtor3PYKXZpLBDO4Vc1mMLZei5yNM7A7BwC6bD3";
+          var url = "https://api.nasa.gov/planetary/apod?";
+          url += "date="+date;
+          url += "&api_key=" + api;
+          console.log(url);
+          $.ajax({
+             url: url,
+             dataType: "json",
+             success: function(data) {
+                 var imgUrl = data.url;
+                 $("#apodDiv img").attr("src", imgUrl);
+                 $("#apodDiv h1").text(data.title);
+                 $("#apodDiv p").text(data.explanation);
+             }
+          });
+      }
       
    });
 });
 
-
+function validDate(dateString) {
+    var dateObj = new Date(dateString);
+    var firstDate = new Date("1995-06-16");
+    var today = new Date();
+    if(dateObj > today || dateObj < firstDate) {
+        alert("The date must be after June 16, 1995 and before today.");
+        return false;
+    }
+    return true;
+}
 function setImage(pictures, index) {
     $("#picture img").attr("src", pictures[index].link);
     $("#picture h1").text(pictures[index].title);
