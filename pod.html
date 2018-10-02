@@ -1,36 +1,49 @@
 <!DOCTYPE html>
+
 <html>
+
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
         <script src="jquery-3.3.1.min.js"></script>
+
         <script src="getpictures.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="styling2.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     </head>
+
     <body>
         
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-    </div>
-  </div>
-</nav>
-
         <ul>
-            <li><a href="index.html">Picture Search</a></li>
-            <li><a href="pod.html">NASA Image of the day</a></li>
+          <li><a href="index.html" style="background-color:pink">Home</a></li>
+          <li><a href="pod.html">Refresh</a></li>
         </ul>
-        <input type="date" id="apodDate">
-        <button id="apodSubmit">Search</button>
+        
+
+
+        <input type="date" id="apodDate"><div style="width:20%; margin-left: auto;margin-right: auto;"></div>
+
+        <button id="apodSubmit" class="w3-button w3-white w3-border w3-border-red w3-round-large">Search</button>
+
         <div id="apodDiv">
+
             <h1></h1>
-            <img height="250px"> 
+
+            <img height="300px" class="center"> 
+
             <p></p>
+
         </div>
+        
+    <div class="plate">
+      <p class="script"><span>Images</span></p>
+      <p class="shadow text1">OF</p>
+      <p class="shadow text2">NASA</p>
+      <p class="shadow text3">by</p>
+      <p class="script"><span>DAY</span></p>
+    </div>
+    
     </body>
+
 </html>

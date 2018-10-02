@@ -7,7 +7,7 @@ $(document).ready(function() {
         + searchTerm + "&media_type=image";
         pictures = [];
         curDisplay = 0;
-        
+        $("#clickme").click();
       $.ajax({
          url: url,
          dataType: "json",
