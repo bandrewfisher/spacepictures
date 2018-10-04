@@ -66,10 +66,17 @@ $(document).ready(function() {
              url: url,
              dataType: "json",
              success: function(data) {
+                 var title = data.title;
+                 var explanation = data.explanation;
                  var imgUrl = data.url;
-                 $("#apodDiv img").attr("src", imgUrl);
-                 $("#apodDiv h1").text(data.title);
-                 $("#apodDiv p").text(data.explanation);
+                 $("#apodDiv").html("");
+                 $("#apodDiv").append("<center><h1 style='color:red'>" + title + "</h1></center>");
+                 if(data.media_type == "video") {
+                    $("#apodDiv").append("<iframe src='"+ imgUrl + "' height='400px'class='center'></iframe>")
+                 } else {
+                     $("#apodDiv").append("<img src='" + imgUrl + "' height='300px' class='center'>");
+                 }
+                 $("#apodDiv").append("<p style='color:white'>" + explanation + "</p>");
              }
           });
       }

@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="styling.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="jquery-3.3.1.min.js"></script>
-        <script src="getpictures.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        
-    </head>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" width="100px">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<head>
+  <link rel="stylesheet" type="text/css" href="styling.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="getpictures.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" width="100px">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="pod.html">Nasa picture of the day</a>
-    <div class="dropdown-divider"></div>
-    <a href="https://github.com/bandrewfisher/spacepictures">Github</a>
-  </div>
-</div>
-
-      <li class="nav-item">
-       <a class="nav-link disabled" href="index.html">Refresh</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div id="container" id="clickme">
-  <div id="flip">
-    <div><div>Let's begin</div></div>
-    <div><div>This will be an awesome trip</div></div>
-    <div><div>Hi hoodey, today we will have a trip to the SPACE</div></div>
-  </div>
-</div>
-        <div id="clickme">
-        <img src="https://www.kasandbox.org/programming-images/avatars/Hopper-jumping.gif" id="hopper">
+    <div id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content">
+            <a href="pod.html">Nasa picture of the day</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/bandrewfisher/spacepictures">Github</a>
+          </div>
         </div>
-        <input type="text" id="search">
 
-        <button id="submit">Search</button>
-        
-        <div id="picture">
-            <h1></h1>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="index.html">Refresh</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-            <img height="500px">
-        </div>
-        <button id="left"> < </button>
+  <div id="container" id="clickme">
+    <div id="flip">
+      <div>
+        <div>Let's begin</div>
+      </div>
+      <div>
+        <div>This will be an awesome trip</div>
+      </div>
+      <div>
+        <div>Hi hoodey, today we will have a trip to SPACE</div>
+      </div>
+    </div>
+  </div>
+  <div id="clickme">
+    <img src="https://www.kasandbox.org/programming-images/avatars/Hopper-jumping.gif" id="hopper">
+  </div>
+  <div>
+  <label style="background-color:white;margin-top:5px">Type a term to find space pictures (e.g. moon, jupiter, mars)<br>
+    Use the arrows at the bottom to navigate.</label>
+  <br>
+  <input type="text" id="search">
+  </div>
 
-        <label id="resultCount" style="color:red"></label>
+  <button id="submit">Search</button>
 
-        <button id="right"> > </button>
-        <script>
-        $( "#clickme" ).click(function() {
-        $( "#hopper" ).fadeOut( "normal", function() {
+  <div id="picture" >
+    <h1 style="color:white"></h1>
+
+    <img height="500px">
+  </div>
+  <button id="left"> < </button>
+
+  <label id="resultCount" style="color:red"></label>
+
+  <button id="right"> > </button>
+  <script>
+    $("#clickme").click(function() {
+      $("#hopper").fadeOut("normal", function() {
         // Animation complete. on click to dissapear
-  });
-        $( "#flip" ).fadeOut( "normal", function() {
+      });
+      $("#flip").fadeOut("normal", function() {
         // Animation complete. on click to dissapear
-  });
-});
-        </script>
+      });
+    });
+  </script>
 
-        
-    </body>
+
+</body>
 
 </html>
